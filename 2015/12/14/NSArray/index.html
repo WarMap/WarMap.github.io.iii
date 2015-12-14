@@ -18,6 +18,9 @@
   <title>WarMap’s Blog</title>
   <meta name="author" content="WarMap">
   
+  <meta name="description" content="NSArray- (NSArray&amp;lt;ObjectType&amp;gt; *)sortedArrayUsingComparator:(NSComparator)cmptr
+Returns an array that lists the receiving array’s elements in asc">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -62,8 +65,7 @@
 </div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -78,126 +80,126 @@
 </div>
   
   <div class="post-content">
-    <header>
-      
-        <time datetime="2015-12-14T08:36:45.000Z"><a href="/2015/12/14/NSArray/">2015-12-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/12/14/NSArray/"></a></h1>
-  
-
-    </header>
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="WarMap">WarMap</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-12-14T08:36:45.000Z" itemprop="datePublished">2015-12-14</time>
+    更新日期:<time datetime="2015-12-14T08:36:45.000Z" itemprop="dateModified">2015-12-14</time>
+    
+  </p>
+</header>
     <div class="entry">
-		 
+		
+        <h1 id="NSArray"><a href="#NSArray" class="headerlink" title="NSArray"></a>NSArray</h1><p><code>- (NSArray&lt;ObjectType&gt; *)sortedArrayUsingComparator:(NSComparator)cmptr</code></p>
+<p>Returns an array that lists the receiving array’s elements in ascending order, as determined by the comparison method specified by a given NSComparator Block.<br>返回一个“升序”排序后的数组，这个“升序”由NSComparator的返回值决定。code give the answer</p>
+<pre><code>NSArray *arrar = @[@(1),@(2)];
+NSArray *b = [[NSArray alloc] init];
+b = [arrar sortedArrayUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+    if (obj1.intValue &gt; obj2.intValue) {
+        return NSOrderedDescending;
+    }else if (obj2.intValue &gt; obj1.intValue) {
+        return NSOrderedAscending;
+    }else
+        return NSOrderedSame;
+}];
+NSLog(@&quot;%@&quot;,b);
+</code></pre><p>  <img src="quiver-image-url/9C0B8D6E1341136EADD1C7ABCA200ADD.png" alt="屏幕快照 2015-12-14 下午4.24.56.png"></p>
+<pre><code>NSArray *arrar = @[@(1)@(2)];
+NSArray *b = [[NSArray alloc] init];
+b = [arrar sortedArrayUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+    if (obj1.intValue &gt; obj2.intValue) {
+        return NSOrderedAscending;
+    }else if (obj2.intValue &gt; obj1.intValue) {
+        return NSOrderedDescending;
+    }else
+        return NSOrderedSame;
+}];
+NSLog(@&quot;%@&quot;,b);
+</code></pre><p><img src="quiver-image-url/8ADACEB9407912C4839C5226D06F251E.png" alt="屏幕快照 2015-12-14 下午4.25.29.png"><br>由上面可以看出，再cmptr中决定排序要比较的内容和规则。</p>
+
     </div>
     <footer>
-		<div class="alignleft">
-		<a href="/2015/12/14/NSArray/#more" class="more-link">Read more</a>
-		</div>
-		
-		<div class="comments-count">
-			
-			<a href="/2015/12/14/NSArray/#comment" class="ds-thread-count icon-comment" data-thread-key="2015/12/14/NSArray/" data-count-type="comments"></a>
-			
-		</div>
-		
-        <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
+        
+        
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
 </div>
-  
-  <div class="post-content">
-    <header>
-      
-        <time datetime="2015-12-13T07:51:51.000Z"><a href="/2015/12/13/mac下使用hexo搭建blog/">2015-12-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/12/13/mac下使用hexo搭建blog/">mac下使用hexo搭建blog</a></h1>
-  
-
-    </header>
-    <div class="entry">
-		 
-    </div>
-    <footer>
-		<div class="alignleft">
-		<a href="/2015/12/13/mac下使用hexo搭建blog/#more" class="more-link">Read more</a>
-		</div>
-		
-		<div class="comments-count">
-			
-			<a href="/2015/12/13/mac下使用hexo搭建blog/#comment" class="ds-thread-count icon-comment" data-thread-key="2015/12/13/mac下使用hexo搭建blog/" data-count-type="comments"></a>
-			
-		</div>
-		
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
         <div class="clearfix"></div>
     </footer>
   </div>
 </article>
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+ <nav id="pagination" >
     
-      <img src="">
     
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <time datetime="2015-12-13T05:37:51.000Z"><a href="/2015/12/13/hello-world/">2015-12-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/12/13/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-		 
-    </div>
-    <footer>
-		<div class="alignleft">
-		<a href="/2015/12/13/hello-world/#more" class="more-link">Read more</a>
-		</div>
-		
-		<div class="comments-count">
-			
-			<a href="/2015/12/13/hello-world/#comment" class="ds-thread-count icon-comment" data-thread-key="2015/12/13/hello-world/" data-count-type="comments"></a>
-			
-		</div>
-		
-        <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+    <a href="/2015/12/13/mac下使用hexo搭建blog/" class="alignright next" title="mac下使用hexo搭建blog">mac下使用hexo搭建blog</a>
+    
+    <div class="clearfix"></div>
+</nav>
 
 
 
-
+	
+	<section id="comment">
+		<!-- 多说评论框 start -->
+		<div class="ds-thread" data-thread-key="2015/12/14/NSArray/" data-title="" data-url="http://yoursite.com/2015/12/14/NSArray/"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+		var duoshuoQuery = {short_name:"WarMap"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+		<!-- 多说公共JS代码 end -->
+	</section>
+	
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
