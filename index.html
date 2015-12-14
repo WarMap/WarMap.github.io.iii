@@ -66,58 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-NSArray" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/12/14/NSArray/" class="article-date">
-  <time datetime="2015-12-14T08:36:45.000Z" itemprop="datePublished">2015-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="NSArray"><a href="#NSArray" class="headerlink" title="NSArray"></a>NSArray</h1><p><code>- (NSArray&lt;ObjectType&gt; *)sortedArrayUsingComparator:(NSComparator)cmptr</code></p>
-<p>Returns an array that lists the receiving array’s elements in ascending order, as determined by the comparison method specified by a given NSComparator Block.<br>返回一个“升序”排序后的数组，这个“升序”由NSComparator的返回值决定。code give the answer</p>
-<pre><code>NSArray *arrar = @[@(1),@(2)];
-NSArray *b = [[NSArray alloc] init];
-b = [arrar sortedArrayUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-    if (obj1.intValue &gt; obj2.intValue) {
-        return NSOrderedDescending;
-    }else if (obj2.intValue &gt; obj1.intValue) {
-        return NSOrderedAscending;
-    }else
-        return NSOrderedSame;
-}];
-NSLog(@&quot;%@&quot;,b);
-</code></pre><p>  <img src="quiver-image-url/9C0B8D6E1341136EADD1C7ABCA200ADD.png" alt="屏幕快照 2015-12-14 下午4.24.56.png"></p>
-<pre><code>NSArray *arrar = @[@(1)@(2)];
-NSArray *b = [[NSArray alloc] init];
-b = [arrar sortedArrayUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-    if (obj1.intValue &gt; obj2.intValue) {
-        return NSOrderedAscending;
-    }else if (obj2.intValue &gt; obj1.intValue) {
-        return NSOrderedDescending;
-    }else
-        return NSOrderedSame;
-}];
-NSLog(@&quot;%@&quot;,b);
-</code></pre><p><img src="quiver-image-url/8ADACEB9407912C4839C5226D06F251E.png" alt="屏幕快照 2015-12-14 下午4.25.29.png"><br>由上面可以看出，再cmptr中决定排序要比较的内容和规则。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/14/NSArray/" data-id="cii5rre310003zuqed0egmnoo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-mac下使用hexo搭建blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/13/mac下使用hexo搭建blog/" class="article-date">
@@ -144,7 +92,7 @@ NSLog(@&quot;%@&quot;,b);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/13/mac下使用hexo搭建blog/" data-id="cii5rre2w0001zuqefan9ouzd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/13/mac下使用hexo搭建blog/" data-id="cii5tfra600014oqe4ymd2wej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +137,7 @@ NSLog(@&quot;%@&quot;,b);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/13/hello-world/" data-id="cii5rre2z0002zuqe1g3eufpe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/13/hello-world/" data-id="cii5tfra900024oqedi5774kx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,10 +175,6 @@ NSLog(@&quot;%@&quot;,b);
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2015/12/14/NSArray/">(no title)</a>
-          </li>
         
           <li>
             <a href="/2015/12/13/mac下使用hexo搭建blog/">mac下使用hexo搭建blog</a>
