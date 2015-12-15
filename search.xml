@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title><![CDATA[Mac下使用Hexo－github搭建个人博客]]></title>
+      <url>http://warmap.me/2015/12/15/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%EF%BC%8Dgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>##前言<br>&ensp;&ensp;&ensp;&ensp;先前瞻仰了好久他人的blog，心里很是长草。周末下定决心自己也搞一个,本来做好了万难的准备（以为要自己写界面干啥干啥的，最后还要申请个域名、空间什么的，balabala）后来发现了Hexo和github的组合,简直容易到爆啊，对了做到容易到爆当然少不了homebrew这等神器。好下面开始</p>
+<p>##开搞</p>
+<p>###what do we need？</p>
+<ul>
+<li>homebrew （从此安装只需一句话）</li>
+<li>nodejs（hexo基于nodejs）</li>
+<li>hexo</li>
+<li>git（提交部署github）</li>
+</ul>
+<p>###how to do it</p>
+<p>####安装</p>
+<ol>
+<li><p>安装Homebrew（一句话） <a href="http://brew.sh/" target="_blank" rel="external">官网</a></p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre></li>
+<li><p>安装nodejs（又是一句话）</p>
+<pre><code>brew install node
+</code></pre></li>
+<li><p>安装hexo（又是三句话）（咦，总感觉哪里不对）</p>
+<pre><code>npm install -g hexo
+hexo init
+npm install
+</code></pre></li>
+<li><p>安装git（还是一句话，就是这个feel倍爽）</p>
+<pre><code>sudo brew install git
+</code></pre></li>
+</ol>
+<p>####配置</p>
+<ol>
+<li><p>生成SSH keys</p>
+<p> SSH keys均在用户根目录下.ssh文件夹中保存，会存在之前已经存在key的情况，下面分开讨论</p>
+<ul>
+<li><p>没有key的情况</p>
+<pre><code>ssh-keygen -t rsa -C &quot;注册github的邮箱”
+</code></pre></li>
+</ul>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac下使用hexo搭建blog]]></title>
       <url>http://warmap.me/2015/12/13/mac%E4%B8%8B%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAblog/</url>
       <content type="html"></content>
