@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2015-12-15T04:09:28.000Z</updated>
+  <updated>2015-12-13T07:51:51.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -13,19 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[test]]></title>
-    <link href="http://warmap.me/2015/12/15/test/"/>
-    <id>http://warmap.me/2015/12/15/test/</id>
-    <published>2015-12-15T04:09:28.000Z</published>
-    <updated>2015-12-15T04:09:28.000Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[mac下使用hexo搭建blog]]></title>

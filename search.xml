@@ -4,12 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[test]]></title>
-      <url>http://warmap.me/2015/12/15/test/</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[mac下使用hexo搭建blog]]></title>
       <url>http://warmap.me/2015/12/13/mac%E4%B8%8B%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAblog/</url>
       <content type="html"></content>
