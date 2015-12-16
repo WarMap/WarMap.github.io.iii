@@ -71,19 +71,6 @@ npm install
   </entry>
   
   <entry>
-    <title><![CDATA[mac下使用hexo搭建blog]]></title>
-    <link href="http://warmap.me/2015/12/13/mac%E4%B8%8B%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAblog/"/>
-    <id>http://warmap.me/2015/12/13/mac下使用hexo搭建blog/</id>
-    <published>2015-12-13T07:51:51.000Z</published>
-    <updated>2015-12-13T07:51:51.000Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <link href="http://warmap.me/2015/12/13/hello-world/"/>
     <id>http://warmap.me/2015/12/13/hello-world/</id>
