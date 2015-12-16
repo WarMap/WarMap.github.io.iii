@@ -12,7 +12,10 @@
 <meta property="og:site_name" content="WarMap’s Blog">
 <meta property="og:description" content="前言&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先前查资料或问题总能进到他人的blog，心里很是长草。周末决定自己也搞一个,本来做好了万难的准备（以为要自己写界面干啥干啥的，最后还要申请个域名、空间什么的，balabala）后来发现了Hexo和github的组合,简直容易到爆啊，对了做到容易到爆当然少不了homebrew这等神器。好下面开始。对了">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/77178728gw1ez1b3kttpsj20an0fjaag.jpg">
-<meta property="og:updated_time" content="2015-12-16T02:55:51.000Z">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/77178728gw1ez1bqaseboj20gk0963yu.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/77178728gw1ez1bt2nqlyj20gk02mwek.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/77178728gw1ez1bu4p4gqj20gn09oq3y.jpg">
+<meta property="og:updated_time" content="2015-12-16T03:24:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下使用Hexo－github搭建个人博客">
 <meta name="twitter:description" content="前言&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先前查资料或问题总能进到他人的blog，心里很是长草。周末决定自己也搞一个,本来做好了万难的准备（以为要自己写界面干啥干啥的，最后还要申请个域名、空间什么的，balabala）后来发现了Hexo和github的组合,简直容易到爆啊，对了做到容易到爆当然少不了homebrew这等神器。好下面开始。对了">
@@ -126,8 +129,15 @@ npm install
 <li><p>添加key到ssh-agent</p>
 <pre><code>ssh-add ~/.ssh/id_rsa
 </code></pre></li>
-<li>添加key到github<ul>
-<li>打开github，在右上角点击你的头像，然后点击<strong>setting</strong><br><img src="http://ww3.sinaimg.cn/large/77178728gw1ez1b3kttpsj20an0fjaag.jpg" alt="tui"></li>
+<li><p>添加key到github</p>
+<ul>
+<li>打开github，在右上角点击你的头像，然后点击<strong>setting</strong><br><img src="http://ww3.sinaimg.cn/large/77178728gw1ez1b3kttpsj20an0fjaag.jpg" alt=""></li>
+<li>设置的侧边栏点击<strong>SSH keys</strong><br><img src="http://ww3.sinaimg.cn/large/77178728gw1ez1bqaseboj20gk0963yu.jpg" alt=""></li>
+<li>点击<strong>Add SSH key</strong><br><img src="http://ww1.sinaimg.cn/large/77178728gw1ez1bt2nqlyj20gk02mwek.jpg" alt=""></li>
+<li>title随便写，把你的key粘贴到下面。然后点击<strong>Add key</strong><br><img src="http://ww4.sinaimg.cn/large/77178728gw1ez1bu4p4gqj20gn09oq3y.jpg" alt=""></li>
+<li><p>检查是否关联成功</p>
+<pre><code>ssh -T git@github.com
+</code></pre></li>
 </ul>
 </li>
 </ol>
