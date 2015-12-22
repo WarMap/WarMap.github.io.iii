@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2015-12-22T03:02:42.000Z</updated>
+  <updated>2015-12-22T03:29:27.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://warmap.me/2015/12/22/va-list-OC%E4%B8%8D%E5%AE%9A%E5%8F%82%E6%95%B0%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
     <id>http://warmap.me/2015/12/22/va-list-OC不定参数函数的实现/</id>
     <published>2015-12-22T01:39:08.000Z</published>
-    <updated>2015-12-22T03:02:42.000Z</updated>
+    <updated>2015-12-22T03:29:27.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h1><p>官方文档是最好的学习资料，我们先看看系统中我们常用的不定参数函数</p>
 <pre><code>void NSLog ( NSString *format, ... );
 
@@ -70,7 +70,8 @@
 </table>
 <h1 id="u5F00_u5DE5"><a href="#u5F00_u5DE5" class="headerlink" title="开工"></a>开工</h1><p>先定义一个“人”类</p>
 <pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@interface Person : NSObject</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2 ,...;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Person</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2, ... &#123;</span><br><span class="line">   	NSString *str;</span><br><span class="line">   	NSLog(@<span class="string">"吃%@"</span>,food1);</span><br><span class="line">   	va_list v1;</span><br><span class="line">  		str = food2;</span><br><span class="line">   	va_start(v1,food2);</span><br><span class="line">   	<span class="keyword">do</span></span><br><span class="line">   	&#123;</span><br><span class="line">       	NSLog(@<span class="string">"吃%@"</span>,str);</span><br><span class="line">       	str=va_arg(v1,NSString*);</span><br><span class="line">   	&#125; <span class="keyword">while</span> (str != NULL );</span><br><span class="line">   	va_end(v1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-</code></pre><p>参考：</p>
+</code></pre><p>##剖析<br>原型： void va_start(va_list arg_ptr,prev_param)<br>功能： prev_param为最后一个固定参数，<strong>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的。</strong><br>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的。va_start</p>
+<p>参考：</p>
 <p><a href="https://zh.wikipedia.org/wiki/Stdarg.h" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Stdarg.h</a></p>
 ]]></content>
     <summary type="html">
