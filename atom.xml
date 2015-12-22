@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2015-12-16T06:32:30.000Z</updated>
+  <updated>2015-12-22T01:39:08.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[va_list OC可选多参的实现]]></title>
+    <link href="http://warmap.me/2015/12/22/va-list-OC%E5%8F%AF%E9%80%89%E5%A4%9A%E5%8F%82%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://warmap.me/2015/12/22/va-list-OC可选多参的实现/</id>
+    <published>2015-12-22T01:39:08.000Z</published>
+    <updated>2015-12-22T01:39:08.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Mac下使用Hexo－github搭建个人博客]]></title>
