@@ -142,8 +142,9 @@
 <p><img src="http://ww1.sinaimg.cn/large/77178728gw1ez8anm3hd6j20df03fdgh.jpg" alt=""></p>
 <p>##剖析<br>原型： void va_start(va_list arg_ptr,prev_param)<br>功能： prev_param为最后一个固定参数，<strong>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的。</strong>这里对应的就是参数food2.va_start根据prev_param的地址起点来确定不定参数的内存起始地址，然后赋值给arg_ptr。</p>
 <p>原型：type va_arg(va_list arg_ptr,type);<br>功能：获取下一个变参的地址。arg_ptr即为当前要取出变参的地址，type为要取出变参的类型（决定返回值的类型）得到这个变参后，将arg_ptr指向下一个变参</p>
-<p>原型：void  va_end(va_list arg_ptr);<br>功能：将va_list指针释放<br>参考：</p>
-<p><a href="https://zh.wikipedia.org/wiki/Stdarg.h" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Stdarg.h</a></p>
+<p>原型：void  va_end(va_list arg_ptr);<br>功能：将va_list指针释放</p>
+<p>参考：</p>
+<p><a href="https://zh.wikipedia.org/wiki/Stdarg.h" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Stdarg.h</a><br><a href="http://www.cnblogs.com/wangyonghui/archive/2010/07/12/1776068.html" target="_blank" rel="external">http://www.cnblogs.com/wangyonghui/archive/2010/07/12/1776068.html</a></p>
 
       
     </div>
