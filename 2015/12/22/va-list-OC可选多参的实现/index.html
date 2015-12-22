@@ -17,7 +17,7 @@
 , ...
 - (instancetype)initWithTitle:(NSString *)title
                  delegate">
-<meta property="og:updated_time" content="2015-12-22T01:42:13.000Z">
+<meta property="og:updated_time" content="2015-12-22T01:43:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="va_list OC可选多参的实现">
 <meta name="twitter:description" content="介绍官方文档是最好的学习资料，我们先看看系统中我们常用的可选多参函数void NSLog ( NSString *format, ... );- (instancetype)initWithFormat:(NSString *)format
@@ -102,8 +102,8 @@
                  delegate:(id&lt;UIActionSheetDelegate&gt;)delegate
         cancelButtonTitle:(NSString *)cancelButtonTitle
    destructiveButtonTitle:(NSString *)destructiveButtonTitle
-        otherButtonTitles:(NSString *)otherButtonTitles
-</code></pre><p>, …`<br>我们发现虽然是可选多参但是前面还有一些参数，也就是定参。 也就是说可选多参函数也是有一定数量的定参。</p>
+        otherButtonTitles:(NSString *)otherButtonTitles, ...
+</code></pre><p>我们发现虽然是可选多参但是前面还有一些参数，也就是定参。 也就是说可选多参函数也是有一定数量的定参。</p>
 <h1 id="u539F_u6599"><a href="#u539F_u6599" class="headerlink" title="原料"></a>原料</h1><ul>
 <li>va_list</li>
 <li>va_start</li>
