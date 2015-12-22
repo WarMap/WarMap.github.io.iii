@@ -4,8 +4,8 @@
   
     
     <entry>
-      <title><![CDATA[va_list OC不定参数的实现]]></title>
-      <url>http://warmap.me/2015/12/22/va-list-OC%E4%B8%8D%E5%AE%9A%E5%8F%82%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+      <title><![CDATA[va_list OC不定参数函数的实现]]></title>
+      <url>http://warmap.me/2015/12/22/va-list-OC%E4%B8%8D%E5%AE%9A%E5%8F%82%E6%95%B0%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
       <content type="html"><![CDATA[<h1 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h1><p>官方文档是最好的学习资料，我们先看看系统中我们常用的不定参数函数</p>
 <pre><code>void NSLog ( NSString *format, ... );
 
