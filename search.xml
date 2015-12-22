@@ -55,6 +55,7 @@
 </tbody>
 </table>
 <h1 id="u5F00_u5DE5"><a href="#u5F00_u5DE5" class="headerlink" title="开工"></a>开工</h1><p>先定义一个“人”类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <pre><code>@interface Person : NSObject
 
 - (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2 ,...;
