@@ -23,7 +23,8 @@ void NSLog ( NSString *format, ... );
 
 - (instancetype)initWithTitle:(NSString *)title
                  deleg">
-<meta property="og:updated_time" content="2015-12-22T01:55:10.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/77178728gw1ez87f3xxeej208u00m3yh.jpg">
+<meta property="og:updated_time" content="2015-12-22T02:09:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="va_list OC不定参数函数的实现">
 <meta name="twitter:description" content="介绍官方文档是最好的学习资料，我们先看看系统中我们常用的不定参数函数
@@ -115,13 +116,16 @@ void NSLog ( NSString *format, ... );
         cancelButtonTitle:(NSString *)cancelButtonTitle
    destructiveButtonTitle:(NSString *)destructiveButtonTitle
         otherButtonTitles:(NSString *)otherButtonTitles, ...
-</code></pre><p>不定参数函数的参数数量是可变动的，它使用省略号来忽略之后的参数。</p>
+</code></pre><p>不定参数函数的参数数量是可变动的，它使用省略号来忽略之后的参数。需要注意的是:<strong>不定参数函数最少要有一个命名的参数</strong>,不然你就会收到如下错误提示,但在C++，则没有这种强制要求。 （虽然在C++中，这样的声明是合理的，但是这种写法，因为没有已命名的参数，使得va_start没办法抓到动态参数的正确起始点。）</p>
+<p><img src="http://ww4.sinaimg.cn/large/77178728gw1ez87f3xxeej208u00m3yh.jpg" alt=""></p>
 <h1 id="u539F_u6599"><a href="#u539F_u6599" class="headerlink" title="原料"></a>原料</h1><ul>
-<li>va_list</li>
+<li>va_list     用来保存宏va_arg与宏va_end所需信息</li>
 <li>va_start</li>
 <li>va_arg</li>
 <li>va_end</li>
 </ul>
+<p>参考：</p>
+<p><a href="https://zh.wikipedia.org/wiki/Stdarg.h" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Stdarg.h</a></p>
 
       
     </div>
