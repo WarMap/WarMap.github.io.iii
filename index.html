@@ -88,9 +88,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h1><p>官方文档是最好的学习资料，我们先看看系统中我们常用的可选多参函数<br><code>void NSLog ( NSString *format, ... );</code><br><code>- (instancetype)initWithFormat:(NSString *)format
-, ...</code></p>
-<pre><code>- (instancetype)initWithTitle:(NSString *)title
+        <h1 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h1><p>官方文档是最好的学习资料，我们先看看系统中我们常用的可选多参函数</p>
+<pre><code>void NSLog ( NSString *format, ... );
+
+- (instancetype)initWithFormat:(NSString *)format, ...
+
+- (instancetype)initWithTitle:(NSString *)title
                  delegate:(id&lt;UIActionSheetDelegate&gt;)delegate
         cancelButtonTitle:(NSString *)cancelButtonTitle
    destructiveButtonTitle:(NSString *)destructiveButtonTitle
