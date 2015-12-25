@@ -31,8 +31,8 @@ qsort_b(myCharacters, 3, sizeof(char *), ^(const void *l, const void *r) {
 <pre><code>NSArray *stringsArray = @[ @&quot;string 1&quot;,
                            @&quot;String 21&quot;,
                            @&quot;string 12&quot;,
-                        @&quot;String 11&quot;,
-                          @&quot;String 02&quot; ];
+                          @&quot;String 11&quot;,
+                           @&quot;String 02&quot; ];
 static NSStringCompareOptions comparisonOptions = NSCaseInsensitiveSearch | NSNumericSearch | NSWidthInsensitiveSearch | NSForcedOrderingSearch;
 NSLocale *currentLocale = [NSLocale currentLocale];
 
