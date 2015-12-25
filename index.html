@@ -113,7 +113,7 @@ qsort_b(myCharacters, 3, sizeof(char *), ^(const void *l, const void *r) {
 <pre><code>NSArray *stringsArray = @[ @&quot;string 1&quot;,
                            @&quot;String 21&quot;,
                            @&quot;string 12&quot;,
-                          @&quot;String 11&quot;,
+                           @&quot;String 11&quot;,
                            @&quot;String 02&quot; ];
 static NSStringCompareOptions comparisonOptions = NSCaseInsensitiveSearch | NSNumericSearch | NSWidthInsensitiveSearch | NSForcedOrderingSearch;
 NSLocale *currentLocale = [NSLocale currentLocale];
@@ -123,9 +123,22 @@ NSComparator finderSortBlock = ^(id string1, id string2) {
 NSRange string1Range = NSMakeRange(0, [string1 length]);
 return [string1 compare:string2 options:comparisonOptions range:string1Range locale:currentLocale];
 };
-</code></pre><p>NSArray *finderSortArray = [stringsArray sortedArrayUsingComparator:finderSortBlock];<br>NSLog(@”finderSortArray: %@”, finderSortArray);</p>
-<p>/<em><br>Output:<br>finderSortArray: (<br>    “string 1”,<br>    “String 02”,<br>    “String 11”,<br>    “string 12”,<br>    “String 21”<br>)
-</em>/<br>［］</p>
+
+NSArray *finderSortArray = [stringsArray sortedArrayUsingComparator:finderSortBlock];
+NSLog(@&quot;finderSortArray: %@&quot;, finderSortArray);
+
+/*
+Output:
+finderSortArray: (
+    &quot;string 1&quot;,
+    &quot;String 02&quot;,
+    &quot;String 11&quot;,
+    &quot;string 12&quot;,
+    &quot;String 21&quot;
+
+)
+*/
+</code></pre><p>［］</p>
 <p>［］［］</p>
 <p>［］［］</p>
 <p>［］［］</p>
