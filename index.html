@@ -95,7 +95,13 @@
 <p>#Getting Started with Blocks</p>
 <p>###Declaring and Using a Block</p>
 <p>You use the ^ operator to declare a block variable and to indicate the beginning of a block literal. The body of the block itself is contained within {}, as shown in this example (as usual with C, ; indicates the end of the statement):<br><img src="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg" alt=""><br>Notice that the block is able to make use of variables from the same scope in which it was defined.</p>
-<p><strong>注意</strong>：block能使用与其定义的作用域相同的范围</p>
+<p><strong>注意</strong>：block能使用在其被定义的scope内的变量<br>If you declare a block as a variable, you can then use it just as you would a function:<br>如果你声明block为一个变量，你可以像调用一个函数一样调用它</p>
+<p><code>int multiplier = 7;
+int (^myBlock)(int) = ^(int num) {
+    return num * multiplier;
+};
+printf(&quot;%d&quot;, myBlock(3));
+// prints &quot;21&quot;</code></p>
 
       
     </div>
