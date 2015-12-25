@@ -14,7 +14,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
 <meta property="og:description" content="简介官方介绍镇楼（本文主要参考和翻译官方文档）
 Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg">
-<meta property="og:updated_time" content="2015-12-25T04:11:29.000Z">
+<meta property="og:updated_time" content="2015-12-25T04:12:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block series 简介">
 <meta name="twitter:description" content="简介官方介绍镇楼（本文主要参考和翻译官方文档）
@@ -115,9 +115,9 @@ qsort_b(myCharacters, 3, sizeof(char *), ^(const void *l, const void *r) {
 </code></pre><h3 id="Blocks_with_Cocoa"><a href="#Blocks_with_Cocoa" class="headerlink" title="Blocks with Cocoa"></a>Blocks with Cocoa</h3><p>Several methods in the Cocoa frameworks take a block as an argument, typically either to perform an operation on a collection of objects, or to use as a callback after an operation has finished. The following example shows how to use a block with the NSArray method sortedArrayUsingComparator:. The method takes a single argument—the block. For illustration, in this case the block is defined as an NSComparator local variable:<br>有一些Cocoa frameworks的方法接收block做一个参数，典型的应用如：在集合中元素的操作或一个操作完成后的回调。下面的例子展示了NSArray的方法sortedArrayUsingComparator:中如何使用的block。这个方法接收了一个单参数的block。说明一下，这里block定义为一个NSComparator类型的本地变量</p>
 <pre><code>NSArray *stringsArray = @[ @&quot;string 1&quot;,
                            @&quot;String 21&quot;,
-                              @&quot;string 12&quot;,
-                             @&quot;String 11&quot;,
-                             @&quot;String 02&quot; ];
+                           @&quot;string 12&quot;,
+                        @&quot;String 11&quot;,
+                          @&quot;String 02&quot; ];
 static NSStringCompareOptions comparisonOptions = NSCaseInsensitiveSearch | NSNumericSearch | NSWidthInsensitiveSearch | NSForcedOrderingSearch;
 NSLocale *currentLocale = [NSLocale currentLocale];
 
