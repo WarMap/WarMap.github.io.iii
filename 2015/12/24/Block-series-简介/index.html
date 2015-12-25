@@ -6,19 +6,19 @@
   <title>Block series 简介 | WarMap’s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="#简介官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
+‘Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block series 简介">
 <meta property="og:url" content="http://warmap.me/2015/12/24/Block-series-简介/index.html">
 <meta property="og:site_name" content="WarMap’s Blog">
 <meta property="og:description" content="#简介官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
+‘Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg">
-<meta property="og:updated_time" content="2015-12-25T02:19:35.000Z">
+<meta property="og:updated_time" content="2015-12-25T02:21:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block series 简介">
 <meta name="twitter:description" content="#简介官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
+‘Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
   
     <link rel="alternate" href="/atom.xml" title="WarMap’s Blog" type="application/atom+xml">
   
@@ -92,8 +92,7 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
     <div class="article-entry" itemprop="articleBody">
       
         <p>#简介<br>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
-<pre><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.
-</code></pre><p>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
+<p>‘Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.’<br>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
 <pre><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.
 </code></pre><p>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
 <p>#Getting Started with Blocks</p>
