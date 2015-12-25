@@ -140,12 +140,12 @@ finderSortArray: (
 </code></pre><h3 id="block_Variables"><a href="#block_Variables" class="headerlink" title="__block Variables"></a>__block Variables</h3><p>A powerful feature of blocks is that they can modify variables in the same lexical scope. You signal that a block can modify a variable using the __block storage type modifier. Adapting the example shown in Blocks with Cocoa, you could use a block variable to count how many strings are compared as equal as shown in the following example. For illustration, in this case the block is used directly and uses currentLocale as a read-only variable within the block:</p>
 <p>blocks有一个强大的特性，它能修改在同一词法范围内的变量值。block可以修改通过__block存储类型修饰符修饰的变量。改动一下上面的🌰，你可以使用一个block变量来统计下面这个🌰中有多字符串是相同的。说明一下，这里是直接使用的block并在block中用了currentLocale变量（只读）。</p>
 <pre><code>NSArray *stringsArray = @[ @&quot;string 1&quot;,
-                          @&quot;String 21&quot;, // &lt;-
-                          @&quot;string 12&quot;,
-                          @&quot;String 11&quot;,
-                          @&quot;Strîng 21&quot;, // &lt;-
-                          @&quot;Striñg 21&quot;, // &lt;-
-                          @&quot;String 02&quot; ];
+                           @&quot;String 21&quot;, // &lt;-
+                           @&quot;string 12&quot;,
+                           @&quot;String 11&quot;,
+                           @&quot;Strîng 21&quot;, // &lt;-
+                           @&quot;Striñg 21&quot;, // &lt;-
+                           @&quot;String 02&quot; ];
 
 NSLocale *currentLocale = [NSLocale currentLocale];
 __block NSUInteger orderedSameCount = 0;
@@ -173,7 +173,7 @@ diacriticInsensitiveSortArray: (
     &quot;String 11&quot;,
     &quot;string 12&quot;,
     &quot;String 21&quot;,
-       &quot;Str\U00eeng 21&quot;,
+    &quot;Str\U00eeng 21&quot;,
     &quot;Stri\U00f1g 21&quot;
 )
 orderedSameCount: 2
