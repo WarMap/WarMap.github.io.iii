@@ -152,13 +152,13 @@ __block NSUInteger orderedSameCount = 0;
 
 NSArray *diacriticInsensitiveSortArray = [stringsArray sortedArrayUsingComparator:^(id string1, id string2) {
 
-NSRange string1Range = NSMakeRange(0, [string1 length]);
-NSComparisonResult comparisonResult = [string1 compare:string2 options:NSDiacriticInsensitiveSearch range:string1Range locale:currentLocale];
+    NSRange string1Range = NSMakeRange(0, [string1 length]);
+    NSComparisonResult comparisonResult = [string1 compare:string2 options:NSDiacriticInsensitiveSearch range:string1Range locale:currentLocale];
 
-if (comparisonResult == NSOrderedSame) {
-    orderedSameCount++;
-}
-return comparisonResult;
+    if (comparisonResult == NSOrderedSame) {
+        orderedSameCount++;
+    }
+    return comparisonResult;
 }];
 
 NSLog(@&quot;diacriticInsensitiveSortArray: %@&quot;, diacriticInsensitiveSortArray);
