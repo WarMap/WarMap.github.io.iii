@@ -5,23 +5,20 @@
   
   <title>Block series 简介 | WarMap’s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#简介
-官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
+  <meta name="description" content="简介官方介绍镇楼（本文主要参考和翻译官方文档）
+Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block series 简介">
 <meta property="og:url" content="http://warmap.me/2015/12/24/Block-series-简介/index.html">
 <meta property="og:site_name" content="WarMap’s Blog">
-<meta property="og:description" content="#简介
-官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
+<meta property="og:description" content="简介官方介绍镇楼（本文主要参考和翻译官方文档）
+Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg">
-<meta property="og:updated_time" content="2015-12-25T02:34:30.000Z">
+<meta property="og:updated_time" content="2015-12-25T02:35:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block series 简介">
-<meta name="twitter:description" content="#简介
-官方介绍镇楼（本文主要参考和翻译官方文档）
-Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable binding">
+<meta name="twitter:description" content="简介官方介绍镇楼（本文主要参考和翻译官方文档）
+Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings">
   
     <link rel="alternate" href="/atom.xml" title="WarMap’s Blog" type="application/atom+xml">
   
@@ -94,13 +91,10 @@ Block objects are a C-level syntactic and runtime feature. They are similar to s
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#简介</p>
-<p>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
+        <h1 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h1><p>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
 <p><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.</code><br>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
 <p><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.</code><br>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
-<p>#Getting Started with Blocks</p>
-<p>###Declaring and Using a Block</p>
-<p>You use the ^ operator to declare a block variable and to indicate the beginning of a block literal. The body of the block itself is contained within {}, as shown in this example (as usual with C, ; indicates the end of the statement):<br><img src="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg" alt=""><br>Notice that the block is able to make use of variables from the same scope in which it was defined.</p>
+<h1 id="Getting_Started_with_Blocks"><a href="#Getting_Started_with_Blocks" class="headerlink" title="Getting Started with Blocks"></a>Getting Started with Blocks</h1><h3 id="Declaring_and_Using_a_Block"><a href="#Declaring_and_Using_a_Block" class="headerlink" title="Declaring and Using a Block"></a>Declaring and Using a Block</h3><p>You use the ^ operator to declare a block variable and to indicate the beginning of a block literal. The body of the block itself is contained within {}, as shown in this example (as usual with C, ; indicates the end of the statement):<br><img src="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg" alt=""><br>Notice that the block is able to make use of variables from the same scope in which it was defined.</p>
 <p><strong>注意</strong>：block能使用在其被定义的scope内的变量<br>If you declare a block as a variable, you can then use it just as you would a function:<br>如果你声明block为一个变量，你可以像调用一个函数一样调用它</p>
 <p><code>int multiplier = 7;
 int (^myBlock)(int) = ^(int num) {
