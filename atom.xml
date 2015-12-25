@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2015-12-25T07:31:07.000Z</updated>
+  <updated>2015-12-25T07:31:48.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://warmap.me/2015/12/24/Block-series-%E7%AE%80%E4%BB%8B/"/>
     <id>http://warmap.me/2015/12/24/Block-series-简介/</id>
     <published>2015-12-24T07:21:59.000Z</published>
-    <updated>2015-12-25T07:31:07.000Z</updated>
+    <updated>2015-12-25T07:31:48.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h1><p>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
 <p><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.</code><br>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
 <p><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.</code><br>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
@@ -72,12 +72,12 @@ finderSortArray: (
 </code></pre><h3 id="block_Variables"><a href="#block_Variables" class="headerlink" title="__block Variables"></a>__block Variables</h3><p>A powerful feature of blocks is that they can modify variables in the same lexical scope. You signal that a block can modify a variable using the __block storage type modifier. Adapting the example shown in Blocks with Cocoa, you could use a block variable to count how many strings are compared as equal as shown in the following example. For illustration, in this case the block is used directly and uses currentLocale as a read-only variable within the block:</p>
 <p>blocks有一个强大的特性，它能修改在同一词法范围内的变量值。block可以修改通过__block存储类型修饰符修饰的变量。改动一下上面的🌰，你可以使用一个block变量来统计下面这个🌰中有多字符串是相同的。说明一下，这里是直接使用的block并在block中用了currentLocale变量（只读）。</p>
 <pre><code>NSArray *stringsArray = @[ @&quot;string 1&quot;,
-                              @&quot;String 21&quot;, // &lt;-
-                              @&quot;string 12&quot;,
-                              @&quot;String 11&quot;,
-                              @&quot;Strîng 21&quot;, // &lt;-
-                              @&quot;Striñg 21&quot;, // &lt;-
-                              @&quot;String 02&quot; ];
+                          @&quot;String 21&quot;, // &lt;-
+                          @&quot;string 12&quot;,
+                          @&quot;String 11&quot;,
+                          @&quot;Strîng 21&quot;, // &lt;-
+                          @&quot;Striñg 21&quot;, // &lt;-
+                          @&quot;String 02&quot; ];
 
 NSLocale *currentLocale = [NSLocale currentLocale];
 __block NSUInteger orderedSameCount = 0;
