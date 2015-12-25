@@ -93,13 +93,13 @@
 <p><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.</code><br>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
 <h1 id="Getting_Started_with_Blocks"><a href="#Getting_Started_with_Blocks" class="headerlink" title="Getting Started with Blocks"></a>Getting Started with Blocks</h1><h3 id="Declaring_and_Using_a_Block"><a href="#Declaring_and_Using_a_Block" class="headerlink" title="Declaring and Using a Block"></a>Declaring and Using a Block</h3><p>You use the ^ operator to declare a block variable and to indicate the beginning of a block literal. The body of the block itself is contained within {}, as shown in this example (as usual with C, ; indicates the end of the statement):<br><img src="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg" alt=""><br>Notice that the block is able to make use of variables from the same scope in which it was defined.</p>
 <p><strong>注意</strong>：block能使用在其被定义的scope内的变量<br>If you declare a block as a variable, you can then use it just as you would a function:<br>如果你声明block为一个变量，你可以像调用一个函数一样调用它</p>
-<p><code>int multiplier = 7;
+<pre><code>int multiplier = 7;
 int (^myBlock)(int) = ^(int num) {
     return num * multiplier;
 };
 printf(&quot;%d&quot;, myBlock(3));
-// prints &quot;21&quot;</code></p>
-
+// prints &quot;21&quot;`
+</code></pre>
       
     </div>
     <footer class="article-footer">
