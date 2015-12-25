@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2015-12-22T13:35:16.000Z</updated>
+  <updated>2015-12-25T02:18:25.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -15,11 +15,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Block series 简介]]></title>
+    <link href="http://warmap.me/2015/12/24/Block-series-%E7%AE%80%E4%BB%8B/"/>
+    <id>http://warmap.me/2015/12/24/Block-series-简介/</id>
+    <published>2015-12-24T07:21:59.000Z</published>
+    <updated>2015-12-25T02:18:25.000Z</updated>
+    <content type="html"><![CDATA[<p>#简介<br>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
+<pre><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.
+</code></pre><p>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
+<pre><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.
+</code></pre><p>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
+<p>#Getting Started with Blocks</p>
+<p>###Declaring and Using a Block<br>You use the ^ operator to declare a block variable and to indicate the beginning of a block literal. The body of the block itself is contained within {}, as shown in this example (as usual with C, ; indicates the end of the statement):<br><img src="http://ww4.sinaimg.cn/large/77178728gw1ezbonewlmxj20fg06cmy4.jpg" alt=""><br>Notice that the block is able to make use of variables from the same scope in which it was defined.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>#简介<br>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
+<pre><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C fun]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[va_list OC不定参数函数的实现]]></title>
     <link href="http://warmap.me/2015/12/22/va-list-OC%E4%B8%8D%E5%AE%9A%E5%8F%82%E6%95%B0%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
     <id>http://warmap.me/2015/12/22/va-list-OC不定参数函数的实现/</id>
     <published>2015-12-22T01:39:08.000Z</published>
-    <updated>2015-12-22T13:35:16.000Z</updated>
+    <updated>2015-12-22T13:37:25.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h1><p>官方文档是最好的学习资料，我们先看看系统中我们常用的不定参数函数</p>
 <pre><code>void NSLog ( NSString *format, ... );
 
@@ -69,7 +90,7 @@
 </tbody>
 </table>
 <h1 id="u5F00_u5DE5"><a href="#u5F00_u5DE5" class="headerlink" title="开工"></a>开工</h1><p>先定义一个“人”类</p>
-<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@interface Person : NSObject</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2 ,...;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Person</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2, ... &#123;</span><br><span class="line">   	NSString *str;</span><br><span class="line">   	NSLog(@<span class="string">"吃%@"</span>,food1);</span><br><span class="line">   	va_list v1;</span><br><span class="line">  		str = food2;</span><br><span class="line">   	va_start(v1,food2);</span><br><span class="line">   	<span class="keyword">do</span></span><br><span class="line">   	&#123;</span><br><span class="line">       	NSLog(@<span class="string">"吃%@"</span>,str);</span><br><span class="line">       	str=va_arg(v1,NSString*);</span><br><span class="line">   	&#125; <span class="keyword">while</span> (str != NULL );</span><br><span class="line">   	va_end(v1);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">调用</span><br><span class="line">Person *p = [[Person alloc] init];</span><br><span class="line">   [p eatAllKindsOfFood:@<span class="string">"饺子"</span> food2:@<span class="string">"火锅"</span>, @<span class="string">"烧烤"</span>, @<span class="string">"面条"</span>, nil];</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@interface Person : NSObject</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2 ,...;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Person</span><br><span class="line"></span><br><span class="line">- (void)eatAllKindsOfFood:(NSString *)food1 food2:(NSString *)food2, ... &#123;</span><br><span class="line">   	NSString *str;</span><br><span class="line">   	NSLog(@<span class="string">"吃%@"</span>,food1);</span><br><span class="line">   	va_list v1;</span><br><span class="line">  		str = food2;</span><br><span class="line">   	va_start(v1,food2);</span><br><span class="line">   	<span class="keyword">do</span></span><br><span class="line">   	&#123;</span><br><span class="line">           NSLog(@<span class="string">"吃%@"</span>,str);</span><br><span class="line">           str=va_arg(v1,NSString*);</span><br><span class="line">   	&#125; <span class="keyword">while</span> (str != NULL );</span><br><span class="line">   	va_end(v1);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">调用</span><br><span class="line">Person *p = [[Person alloc] init];</span><br><span class="line">   [p eatAllKindsOfFood:@<span class="string">"饺子"</span> food2:@<span class="string">"火锅"</span>, @<span class="string">"烧烤"</span>, @<span class="string">"面条"</span>, nil];</span><br></pre></td></tr></table></figure>
 </code></pre><p>输出结果：</p>
 <p><img src="http://ww1.sinaimg.cn/large/77178728gw1ez8anm3hd6j20df03fdgh.jpg" alt=""></p>
 <p>##剖析<br>原型： void va_start(va_list arg_ptr,prev_param)<br>功能： prev_param为最后一个固定参数，<strong>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的。</strong>这里对应的就是参数food2.va_start根据prev_param的地址起点来确定不定参数的内存起始地址，然后赋值给arg_ptr。</p>
