@@ -9,8 +9,7 @@
       <content type="html"><![CDATA[<h1 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h1><p>官方介绍镇楼（本文主要参考和翻译官方文档）</p>
 <p><code>Block objects are a C-level syntactic and runtime feature. They are similar to standard C functions, but in addition to executable code they may also contain variable bindings to automatic (stack) or managed (heap) memory. A block can therefore maintain a set of state (data) that it can use to impact behavior when executed.</code><br>Block 是C语言级的语法并有运行时特性。它和C语言的标准函数很相似，但是在有可执行的代码基础上它还有可能将变量保存到栈或者堆上。因此Block持有了一组“状态值”来确保执行的结果</p>
 <p><code>You can use blocks to compose function expressions that can be passed to API, optionally stored, and used by multiple threads. Blocks are particularly useful as a callback because the block carries both the code to be executed on callback and the data needed during that execution.</code><br>你可以用blocks来组织一段具有某种功能的代码段，而且可以传递给API、选择性存储、多线程使用。Blocks作为回调尤其的好使，因为block携带了回调需要执行的代码和执行时所需的数据（参数）。</p>
-<p>###Block Functionality</p>
-<ul>
+<h3 id="Block_Functionality"><a href="#Block_Functionality" class="headerlink" title="Block Functionality"></a>Block Functionality</h3><ul>
 <li>Has a typed argument list just like a function</li>
 <li>像函数一样有一个参数列表</li>
 <li>Has an inferred or declared return type</li>
@@ -23,7 +22,7 @@
 <li></li>
 <li>Can continue to share and modify state defined within the lexical scope (the stack frame) after the lexical scope (the stack frame) has been destroyed</li>
 </ul>
-<p>###Usage<br>Blocks represent typically small, self-contained pieces of code. As such, they’re particularly useful as a means of encapsulating units of work that may be executed concurrently, or over items in a collection, or as a callback when another operation has finished.<br>Blocks 是典型的麻雀虽小，五脏俱全的小代码块，例如，它尤其适用于在并发执行一段代码，遍历集合元素，操作完成的回调<br>Blocks are a useful alternative to traditional callback functions for two main reasons:<br>Blocks 出于以下两点原因非常适用于回调：</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Blocks represent typically small, self-contained pieces of code. As such, they’re particularly useful as a means of encapsulating units of work that may be executed concurrently, or over items in a collection, or as a callback when another operation has finished.<br>Blocks 是典型的麻雀虽小，五脏俱全的小代码块，例如，它尤其适用于在并发执行一段代码，遍历集合元素，操作完成的回调<br>Blocks are a useful alternative to traditional callback functions for two main reasons:<br>Blocks 出于以下两点原因非常适用于回调：</p>
 <ul>
 <li>They allow you to write code at the point of invocation that is executed later in the context of the method implementation.<br>Blocks are thus often parameters of framework methods.</li>
 <li><p>调用函数时就可以书写函数执行完之后要执行的代码</p>
