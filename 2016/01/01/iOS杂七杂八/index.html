@@ -21,7 +21,7 @@ If you accidentally clicked “Skip Bundle”, you can re-enable this alert by e
 
 
 If you accidentally clicked “Skip Bundle”, you can re-enable this alert by entering the fo">
-<meta property="og:updated_time" content="2016-01-03T01:22:44.000Z">
+<meta property="og:updated_time" content="2016-01-03T02:47:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS杂七杂八">
 <meta name="twitter:description" content="记录一些关于iOS的杂七杂八的东西
@@ -107,23 +107,25 @@ If you accidentally clicked “Skip Bundle”, you can re-enable this alert by e
 <li>文档离线下载地址：<a href="https://developer.apple.com/library/downloads/docset-index.dvtdownloadableindex" target="_blank" rel="external">https://developer.apple.com/library/downloads/docset-index.dvtdownloadableindex</a></li>
 </ul>
 <ul>
-<li>If you accidentally clicked “Skip Bundle”, you can re-enable this alert by entering the following in Terminal:</li>
-</ul>
-<p><code>defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-6.3.2</code></p>
-<ul>
-<li>Xcode7插件路径</li>
-</ul>
-<p><strong>/Users/mapeng/Library/Application Support/Developer/Shared/Xcode/Plug-ins</strong></p>
-<ul>
+<li><p>If you accidentally clicked “Skip Bundle”, you can re-enable this alert by entering the following in Terminal:</p>
+<p>  <code>defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-6.3.2</code></p>
+</li>
+<li><p>Xcode7插件路径</p>
+<p>  <strong>/Users/mapeng/Library/Application Support/Developer/Shared/Xcode/Plug-ins</strong></p>
+</li>
 <li><p>Xcode不显示最近打开项目</p>
 <p>  系统偏好设置－－&gt;通用－－&gt;最近使用的项目</p>
+</li>
+<li>清空Xcode控制台内容  <strong>⌘ + K </strong></li>
+<li><p>lldb查看私有类 <code>image lookup -rn DVTBezelAlertPanel</code></p>
+<p>  <strong>Note:</strong> Be aware that the image lookup LLDB command will list methods that are implemented in memory. When applying this to a particular class, this does not take into account subclassing where other methods inherit from superclasses. That is, the lookup of this command will omit any methods only declared in superclasses provided the subclasses do not override the super method.</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://warmap.me/2016/01/01/iOS杂七杂八/" data-id="ciivsyt5s0001t5qe8s5c8nla" class="article-share-link">Share</a>
+      <a data-url="http://warmap.me/2016/01/01/iOS杂七杂八/" data-id="ciizmel7k0001y0qe9nwp5eor" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,6 +133,15 @@ If you accidentally clicked “Skip Bundle”, you can re-enable this alert by e
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/01/04/UIView/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          UIView
+        
+      </div>
+    </a>
   
   
     <a href="/2015/12/24/Block-series-简介/" id="article-nav-older" class="article-nav-link-wrap">
@@ -191,6 +202,10 @@ If you accidentally clicked “Skip Bundle”, you can re-enable this alert by e
       <ul>
         
           <li>
+            <a href="/2016/01/04/UIView/">UIView</a>
+          </li>
+        
+          <li>
             <a href="/2016/01/01/iOS杂七杂八/">iOS杂七杂八</a>
           </li>
         
@@ -204,10 +219,6 @@ If you accidentally clicked “Skip Bundle”, you can re-enable this alert by e
         
           <li>
             <a href="/2015/12/15/Mac下使用Hexo－github搭建个人博客/">Mac下使用Hexo－github搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2015/12/13/hello-world/">Hello World</a>
           </li>
         
       </ul>

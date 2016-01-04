@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UIView | WarMap’s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#UIView
+In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIView">
+<meta property="og:url" content="http://warmap.me/2016/01/04/UIView/index.html">
+<meta property="og:site_name" content="WarMap’s Blog">
+<meta property="og:description" content="#UIView
+In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s v">
+<meta property="og:image" content="http://i4.tietuku.com/16cc3cc0b880e1c6.jpg">
+<meta property="og:image" content="http://i4.tietuku.com/1d944b80f0d8bbd8.jpg">
+<meta property="og:updated_time" content="2016-01-04T07:02:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UIView">
+<meta name="twitter:description" content="#UIView
+In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s v">
+  
+    <link rel="alternate" href="/atom.xml" title="WarMap’s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="css/images/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WarMap’s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Time is Money</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://warmap.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-UIView" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/04/UIView/" class="article-date">
+  <time datetime="2016-01-04T07:02:07.000Z" itemprop="datePublished">2016-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UIView
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#UIView</p>
+<p>In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s views. Views define a portion of a window that you want to fill with some content. For example, you might have views that display images, text, shapes, or some combination thereof. You can also use views to organize and manage other views.</p>
+<p>##View Architecture Fundamentals</p>
+<p>Most of the things you might want to do visually are done with view objects—instances of the UIView class. A view object defines a rectangular region on the screen and handles the drawing and touch events in that region. A view can also act as a parent for other views and coordinate the placement and sizing of those views. The UIView class does most of the work in managing these relationships between views, but you can also customize the default behavior as needed.</p>
+<p>Views work in conjunction with Core Animation layers to handle the rendering and animating of a view’s content. Every view in UIKit is backed by a layer object (usually an instance of the CALayer class), which manages the backing store for the view and handles view-related animations. Most operations you perform should be through the UIView interface. However, in situations where you need more control over the rendering or animation behavior of your view, you can perform operations through its layer instead.</p>
+<p>To understand the relationship between views and layers, it helps to look at an example. Figure 1-1 shows the view architecture from the ViewTransitions sample application along with the relationship to the underlying Core Animation layers. The views in the application include a window (which is also a view), a generic UIView object that acts as a container view, an image view, a toolbar for displaying controls, and a bar button item (which is not a view itself but which manages a view internally). (The actual ViewTransitions sample application includes an additional image view that is used to implement transitions. For simplicity, and because that view is usually hidden, it is not included in Figure 1-1.) Every view has a corresponding layer object that can be accessed from that view’s layer property. (Because a bar button item is not a view, you cannot access its layer directly.) Behind those layer objects are Core Animation rendering objects and ultimately the hardware buffers used to manage the actual bits on the screen.</p>
+<p>#####Figure 1-1  Architecture of the views in a sample application<br><img src="http://i4.tietuku.com/16cc3cc0b880e1c6.jpg" alt=""><br>The use of Core Animation layer objects has important implications for performance. The actual drawing code of a view object is called as little as possible, and when the code is called, the results are cached by Core Animation and reused as much as possible later. Reusing already-rendered content eliminates the expensive drawing cycle usually needed to update views. Reuse of this content is especially important during animations, where the existing content can be manipulated. Such reuse is much less expensive than creating new content.</p>
+<p>##View Hierarchies and Subview Management<br>In addition to providing its own content, a view can act as a container for other views. When one view contains another, a parent-child relationship is created between the two views. The child view in the relationship is known as the subview and the parent view is known as the superview. The creation of this type of relationship has implications for both the visual appearance of your application and the application’s behavior.</p>
+<p>Visually, the content of a subview obscures all or part of the content of its parent view. If the subview is totally opaque, then the area occupied by the subview completely obscures the corresponding area of the parent. If the subview is partially transparent, the content from the two views is blended together prior to being displayed on the screen. Each superview stores its subviews in an ordered array and the order in that array also affects the visibility of each subview. If two sibling subviews overlap each other, the one that was added last (or was moved to the end of the subview array) appears on top of the other.</p>
+<p>The superview-subview relationship also impacts several view behaviors. Changing the size of a parent view has a ripple effect that can cause the size and position of any subviews to change too. When you change the size of a parent view, you can control the resizing behavior of each subview by configuring the view appropriately. Other changes that affect subviews include hiding a superview, changing a superview’s alpha (transparency), or applying a mathematical transform to a superview’s coordinate system.</p>
+<p>The arrangement of views in a view hierarchy also determines how your application responds to events. When a touch occurs inside a specific view, the system sends an event object with the touch information directly to that view for handling. However, if the view does not handle a particular touch event, it can pass the event object along to its superview. If the superview does not handle the event, it passes the event object to its superview, and so on up the responder chain. Specific views can also pass the event object to an intervening responder object, such as a view controller. If no object handles the event, it eventually reaches the application object, which generally discards it.</p>
+<p>##The View Drawing Cycle<br>The iOS native graphics system combines three major technologies: UIKit, Core Graphics, and Core Animation. UIKit provides views and some high-level drawing functionality within those views, Core Graphics provides additional (lower-level) drawing support within UIKit views, and Core Animation provides the ability to apply transformations and animation to UIKit views. Core Animation is also responsible for view compositing.</p>
+<p>The UIView class uses an on-demand drawing model for presenting content. When a view first appears on the screen, the system asks it to draw its content. The system captures a snapshot of this content and uses that snapshot as the view’s visual representation. If you never change the view’s content, the view’s drawing code may never be called again. The snapshot image is reused for most operations involving the view. If you do change the content, you notify the system that the view has changed. The view then repeats the process of drawing the view and capturing a snapshot of the new results.</p>
+<p>When the contents of your view change, you do not redraw those changes directly. Instead, you invalidate the view using either the setNeedsDisplay or setNeedsDisplayInRect: method. These methods tell the system that the contents of the view changed and need to be redrawn at the next opportunity. The system waits until the end of the current run loop before initiating any drawing operations. This delay gives you a chance to invalidate multiple views, add or remove views from your hierarchy, hide views, resize views, and reposition views all at once. All of the changes you make are then reflected at the same time.</p>
+<p>Note: Changing a view’s geometry does not automatically cause the system to redraw the view’s content. The view’s contentMode property determines how changes to the view’s geometry are interpreted. Most content modes stretch or reposition the existing snapshot within the view’s boundaries and do not create a new one. For more information about how content modes affect the drawing cycle of your view, see Content Modes.<br>When the time comes to render your view’s content, the actual drawing process varies depending on the view and its configuration. System views typically implement private drawing methods to render their content. Those same system views often expose interfaces that you can use to configure the view’s actual appearance. For custom UIView subclasses, you typically override the drawRect: method of your view and use that method to draw your view’s content. There are also other ways to provide a view’s content, such as setting the contents of the underlying layer directly, but overriding the drawRect: method is the most common technique.</p>
+<p>##The Runtime Interaction Model for Views<br>Any time a user interacts with your user interface, or any time your own code programmatically changes something, a complex sequence of events takes place inside of UIKit to handle that interaction. At specific points during that sequence, UIKit calls out to your view classes and gives them a chance to respond on behalf of your application. Understanding these callout points is important to understanding where your views fit into the system. Figure 1-7 shows the basic sequence of events that starts with the user touching the screen and ends with the graphics system updating the screen content in response. The same sequence of events would also occur for any programmatically initiated actions.</p>
+<p>#####Figure 1-7  UIKit interactions with your view objects<br><img src="http://i4.tietuku.com/1d944b80f0d8bbd8.jpg" alt=""></p>
+<p>The following steps break the event sequence in Figure 1-7 down even further and explain what happens at each stage and how you might want your application to react in response.</p>
+<ol>
+<li>The user touches the screen.</li>
+</ol>
+<ul>
+<li>The hardware reports the touch event to the UIKit framework.</li>
+<li>The UIKit framework packages the touch into a UIEvent object and dispatches it to the appropriate view. (For a detailed explanation of how     UIKit delivers events to your views, see Event Handling Guide for iOS.)</li>
+<li>The event-handling code of your view responds to the event. For example, your code might:<ul>
+<li>Change the properties (frame, bounds, alpha, and so on) of the view or its subviews.</li>
+<li>Call the setNeedsLayout method to mark the view (or its subviews) as needing a layout update.</li>
+<li>Call the setNeedsDisplay or setNeedsDisplayInRect: method to mark the view (or its subviews) as needing to be redrawn.</li>
+<li>Notify a controller about changes to some piece of data.<br>Of course, it is up to you to decide which of these things the view should do and which methods it should call.</li>
+</ul>
+</li>
+<li><p>If the geometry of a view changed for any reason, UIKit updates its subviews according to the following rules:</p>
+<ul>
+<li>If you have configured autoresizing rules for your views, UIKit adjusts each view according to those rules. For more information about how autoresizing rules work, see Handling Layout Changes Automatically Using Autoresizing Rules.</li>
+<li><p>If the view implements the layoutSubviews method, UIKit calls it.</p>
+<p>  You can override this method in your custom views and use it to adjust the position and size of any subviews. For example, a view that provides a large scrollable area would need to use several subviews as “tiles” rather than create one large view, which is not likely to fit in memory anyway. In its implementation of this method, the view would hide any subviews that are now offscreen or reposition them and use them to draw newly exposed content. As part of this process, the view’s layout code can also invalidate any views that need to be redrawn.</p>
+</li>
+</ul>
+</li>
+<li><p>If any part of any view was marked as needing to be redrawn, UIKit asks the view to redraw itself.</p>
+<p>  For custom views that explicitly define a drawRect: method, UIKit calls that method. Your implementation of this method should redraw the specified area of the view as quickly as possible and nothing else. Do not make additional layout changes at this point and do not make other changes to your application’s data model. The purpose of this method is to update the visual content of your view.</p>
+<p>  Standard system views typically do not implement a drawRect: method but instead manage their drawing at this time.</p>
+</li>
+<li><p>Any updated views are composited with the rest of the application’s visible content and sent to the graphics hardware for display.</p>
+</li>
+<li>The graphics hardware transfers the rendered content to the screen.</li>
+</ul>
+<p>Because view objects are the main way your application interacts with the user, they have a number of responsibilities. Here are just a few:</p>
+<ul>
+<li><p>Drawing and animation</p>
+<ul>
+<li><p>Views draw content in their rectangular area using technologies such as UIKit, Core Graphics, and OpenGL ES.</p>
+</li>
+<li><p>Some view properties can be animated to new values.</p>
+</li>
+</ul>
+</li>
+<li><p>Layout and subview management</p>
+<ul>
+<li><p>A view may contain zero or more subviews.</p>
+</li>
+<li><p>Each view defines its own default resizing behavior in relation to its parent view.</p>
+</li>
+<li><p>A view can define the size and position of its subviews as needed.</p>
+</li>
+</ul>
+</li>
+<li><p>Event handling</p>
+<ul>
+<li><p>A view is a responder and can handle touch events and other events defined by the UIResponder class.</p>
+</li>
+<li><p>Views can use the addGestureRecognizer: method to install gesture recognizers to handle common gestures.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/WindowsandViews/WindowsandViews.html" target="_blank" rel="external">https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/WindowsandViews/WindowsandViews.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://warmap.me/2016/01/04/UIView/" data-id="ciizmel7v0003y0qessuoo5h6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/01/iOS杂七杂八/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iOS杂七杂八</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<section id="comments">
+  <!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"warmap"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/04/UIView/">UIView</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/01/iOS杂七杂八/">iOS杂七杂八</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/Block-series-简介/">Block series 简介</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/22/va-list-OC不定参数函数的实现/">va_list OC不定参数函数的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/15/Mac下使用Hexo－github搭建个人博客/">Mac下使用Hexo－github搭建个人博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 WarMap<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
