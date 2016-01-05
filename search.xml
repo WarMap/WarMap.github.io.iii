@@ -24,10 +24,10 @@
 <p>The following steps break the event sequence in Figure 1-7 down even further and explain what happens at each stage and how you might want your application to react in response.</p>
 <ol>
 <li>The user touches the screen.</li>
-</ol>
-<ul>
 <li>The hardware reports the touch event to the UIKit framework.</li>
 <li>The UIKit framework packages the touch into a UIEvent object and dispatches it to the appropriate view. (For a detailed explanation of how     UIKit delivers events to your views, see Event Handling Guide for iOS.)</li>
+</ol>
+<ul>
 <li>The event-handling code of your view responds to the event. For example, your code might:<ul>
 <li>Change the properties (frame, bounds, alpha, and so on) of the view or its subviews.</li>
 <li>Call the setNeedsLayout method to mark the view (or its subviews) as needing a layout update.</li>
@@ -104,6 +104,9 @@
 <li>清空Xcode控制台内容  <strong>⌘ + K </strong></li>
 <li><p>lldb查看私有类 <code>image lookup -rn DVTBezelAlertPanel</code></p>
 <p>  <strong>Note:</strong> Be aware that the image lookup LLDB command will list methods that are implemented in memory. When applying this to a particular class, this does not take into account subclassing where other methods inherit from superclasses. That is, the lookup of this command will omit any methods only declared in superclasses provided the subclasses do not override the super method.</p>
+</li>
+<li><p>Xcode的字体和颜色主题路径：</p>
+<p>  <strong>~/Library/Developer/Xcode/UserData/FontAndColorThem</strong></p>
 </li>
 </ul>
 ]]></content>

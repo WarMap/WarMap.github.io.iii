@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Time is Money]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://warmap.me/"/>
-  <updated>2016-01-04T07:06:27.000Z</updated>
+  <updated>2016-01-04T07:07:37.000Z</updated>
   <id>http://warmap.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://warmap.me/2016/01/04/UIView/"/>
     <id>http://warmap.me/2016/01/04/UIView/</id>
     <published>2016-01-04T07:02:07.000Z</published>
-    <updated>2016-01-04T07:06:27.000Z</updated>
+    <updated>2016-01-04T07:07:37.000Z</updated>
     <content type="html"><![CDATA[<h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><p>In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s views. Views define a portion of a window that you want to fill with some content. For example, you might have views that display images, text, shapes, or some combination thereof. You can also use views to organize and manage other views.</p>
 <h2 id="View_Architecture_Fundamentals"><a href="#View_Architecture_Fundamentals" class="headerlink" title="View Architecture Fundamentals"></a>View Architecture Fundamentals</h2><p>Most of the things you might want to do visually are done with view objects—instances of the UIView class. A view object defines a rectangular region on the screen and handles the drawing and touch events in that region. A view can also act as a parent for other views and coordinate the placement and sizing of those views. The UIView class does most of the work in managing these relationships between views, but you can also customize the default behavior as needed.</p>
 <p>Views work in conjunction with Core Animation layers to handle the rendering and animating of a view’s content. Every view in UIKit is backed by a layer object (usually an instance of the CALayer class), which manages the backing store for the view and handles view-related animations. Most operations you perform should be through the UIView interface. However, in situations where you need more control over the rendering or animation behavior of your view, you can perform operations through its layer instead.</p>
@@ -38,10 +38,10 @@
 <p>The following steps break the event sequence in Figure 1-7 down even further and explain what happens at each stage and how you might want your application to react in response.</p>
 <ol>
 <li>The user touches the screen.</li>
-</ol>
-<ul>
 <li>The hardware reports the touch event to the UIKit framework.</li>
 <li>The UIKit framework packages the touch into a UIEvent object and dispatches it to the appropriate view. (For a detailed explanation of how     UIKit delivers events to your views, see Event Handling Guide for iOS.)</li>
+</ol>
+<ul>
 <li>The event-handling code of your view responds to the event. For example, your code might:<ul>
 <li>Change the properties (frame, bounds, alpha, and so on) of the view or its subviews.</li>
 <li>Call the setNeedsLayout method to mark the view (or its subviews) as needing a layout update.</li>
@@ -107,7 +107,7 @@
     <link href="http://warmap.me/2016/01/01/iOS%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
     <id>http://warmap.me/2016/01/01/iOS杂七杂八/</id>
     <published>2016-01-01T14:52:47.000Z</published>
-    <updated>2016-01-03T02:47:31.000Z</updated>
+    <updated>2016-01-05T02:54:24.000Z</updated>
     <content type="html"><![CDATA[<p>记录一些关于iOS的杂七杂八的东西</p>
 <ul>
 <li>文档离线下载地址：<a href="https://developer.apple.com/library/downloads/docset-index.dvtdownloadableindex" target="_blank" rel="external">https://developer.apple.com/library/downloads/docset-index.dvtdownloadableindex</a></li>
@@ -125,6 +125,9 @@
 <li>清空Xcode控制台内容  <strong>⌘ + K </strong></li>
 <li><p>lldb查看私有类 <code>image lookup -rn DVTBezelAlertPanel</code></p>
 <p>  <strong>Note:</strong> Be aware that the image lookup LLDB command will list methods that are implemented in memory. When applying this to a particular class, this does not take into account subclassing where other methods inherit from superclasses. That is, the lookup of this command will omit any methods only declared in superclasses provided the subclasses do not override the super method.</p>
+</li>
+<li><p>Xcode的字体和颜色主题路径：</p>
+<p>  <strong>~/Library/Developer/Xcode/UserData/FontAndColorThem</strong></p>
 </li>
 </ul>
 ]]></content>
