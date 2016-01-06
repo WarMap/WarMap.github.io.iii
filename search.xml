@@ -108,6 +108,10 @@
 <li><p>Xcode的字体和颜色主题路径：</p>
 <p>  <strong>~/Library/Developer/Xcode/UserData/FontAndColorThem</strong></p>
 </li>
+<li><p>查看当前Xcode的UUID</p>
+<p>  <strong>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+</strong></p>
+</li>
 </ul>
 ]]></content>
     </entry>
