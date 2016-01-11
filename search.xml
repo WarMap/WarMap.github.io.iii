@@ -4,8 +4,8 @@
   
     
     <entry>
-      <title><![CDATA[those methods we used quite ofen but not know well]]></title>
-      <url>http://warmap.me/2016/01/11/those-methods-we-used-quite-ofen-but-not-know-well/</url>
+      <title><![CDATA[those methods we used quite often but not know well]]></title>
+      <url>http://warmap.me/2016/01/11/those-methods-we-used-quite-often-but-not-know-well/</url>
       <content type="html"><![CDATA[<p>简单记录下那些我们常用但是不甚了解的方法</p>
 <p>UIImage的<code>+ (UIImage *)imageNamed:(NSString *)name</code></p>
 <p>“This method looks in two places for the image:</p>
