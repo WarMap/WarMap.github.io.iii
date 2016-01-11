@@ -58,7 +58,7 @@
 <meta name="description" content="简单记录下那些我们常用但是不甚了解的方法
 UIImage的+ (UIImage *)imageNamed:(NSString *)name
 “This method looks in two places for the image:
-####Asset catalogWe look in the asset catalog for an image set with the supplied n">
+Asset catalogWe look in the asset catalog for an image set with the supplied name.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="those methods we used quite ofen but not know well">
 <meta property="og:url" content="http://warmap.me/2016/01/11/those-methods-we-used-quite-ofen-but-not-know-well/index.html">
@@ -66,14 +66,14 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
 <meta property="og:description" content="简单记录下那些我们常用但是不甚了解的方法
 UIImage的+ (UIImage *)imageNamed:(NSString *)name
 “This method looks in two places for the image:
-####Asset catalogWe look in the asset catalog for an image set with the supplied n">
-<meta property="og:updated_time" content="2016-01-11T04:08:46.000Z">
+Asset catalogWe look in the asset catalog for an image set with the supplied name.">
+<meta property="og:updated_time" content="2016-01-11T04:10:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="those methods we used quite ofen but not know well">
 <meta name="twitter:description" content="简单记录下那些我们常用但是不甚了解的方法
 UIImage的+ (UIImage *)imageNamed:(NSString *)name
 “This method looks in two places for the image:
-####Asset catalogWe look in the asset catalog for an image set with the supplied n">
+Asset catalogWe look in the asset catalog for an image set with the supplied name.">
 
 
 
@@ -143,7 +143,7 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            Домой
           </a>
         </li>
       
@@ -153,7 +153,7 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
+            Архив
           </a>
         </li>
       
@@ -163,7 +163,7 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            標籤
+            Тэги
           </a>
         </li>
       
@@ -213,7 +213,7 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            отправлено
             <time itemprop="dateCreated" datetime="2016-01-11T11:54:09+08:00" content="2016-01-11">
               2016-01-11
             </time>
@@ -241,8 +241,8 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
         <span itemprop="articleBody"><p>简单记录下那些我们常用但是不甚了解的方法</p>
 <p>UIImage的<code>+ (UIImage *)imageNamed:(NSString *)name</code></p>
 <p>“This method looks in two places for the image:</p>
-<p>####Asset catalog<br>We look in the asset catalog for an image set with the supplied name. The name is case-sensitive.</p>
-<p>####Top level of app bundle<br>We look at the top level of the app’s bundle for an image file with the supplied name. The name is case-sensitive and should include the file extension; if it doesn’t include a file extension, .png is assumed.”</p>
+<h4 id="Asset_catalog"><a href="#Asset_catalog" class="headerlink" title="Asset catalog"></a>Asset catalog</h4><p>We look in the asset catalog for an image set with the supplied name. The name is case-sensitive.</p>
+<h4 id="Top_level_of_app_bundle"><a href="#Top_level_of_app_bundle" class="headerlink" title="Top level of app bundle"></a>Top level of app bundle</h4><p>We look at the top level of the app’s bundle for an image file with the supplied name. The name is case-sensitive and should include the file extension; if it doesn’t include a file extension, .png is assumed.”</p>
 <p>“When calling init(named:), an asset catalog is searched before the top level of the app’s bundle. If there are multiple asset catalogs, they are all searched, but the search order is indeterminate and cannot be specified, so avoid image sets with the same name.<br>A nice thing about init(named:) is that the image data may be cached in memory, and if you ask for the same image by calling init(named:) again later, the cached data may be supplied immediately”</p>
 <p>摘录来自: Matt Neuburg. “Programming iOS 9”。</p>
 </span>
@@ -313,10 +313,10 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Содержание
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Обзор
           </li>
         </ul>
       
@@ -331,21 +331,21 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">записи</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">категории</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">тэги</span>
               </a>
           </div>
 
@@ -383,7 +383,7 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Asset_catalog"><span class="nav-number">1.</span> <span class="nav-text">Asset catalog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Top_level_of_app_bundle"><span class="nav-number">2.</span> <span class="nav-text">Top level of app bundle</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -412,11 +412,11 @@ UIImage的+ (UIImage *)imageNamed:(NSString *)name
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
