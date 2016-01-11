@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[those methods we used quite ofen but not know well]]></title>
+      <url>http://warmap.me/2016/01/11/those-methods-we-used-quite-ofen-but-not-know-well/</url>
+      <content type="html"><![CDATA[<p>简单记录下那些我们常用但是不甚了解的方法</p>
+<p>UIImage的<code>+ (UIImage *)imageNamed:(NSString *)name</code></p>
+<p>“This method looks in two places for the image:</p>
+<p>####Asset catalog<br>We look in the asset catalog for an image set with the supplied name. The name is case-sensitive.</p>
+<p>####Top level of app bundle<br>We look at the top level of the app’s bundle for an image file with the supplied name. The name is case-sensitive and should include the file extension; if it doesn’t include a file extension, .png is assumed.”</p>
+<p>“When calling init(named:), an asset catalog is searched before the top level of the app’s bundle. If there are multiple asset catalogs, they are all searched, but the search order is indeterminate and cannot be specified, so avoid image sets with the same name.<br>A nice thing about init(named:) is that the image data may be cached in memory, and if you ask for the same image by calling init(named:) again later, the cached data may be supplied immediately”</p>
+<p>摘录来自: Matt Neuburg. “Programming iOS 9”。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[UIView]]></title>
       <url>http://warmap.me/2016/01/04/UIView/</url>
       <content type="html"><![CDATA[<h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><p>In iOS, you use windows and views to present your application’s content on the screen. Windows do not have any visible content themselves but provide a basic container for your application’s views. Views define a portion of a window that you want to fill with some content. For example, you might have views that display images, text, shapes, or some combination thereof. You can also use views to organize and manage other views.</p>
